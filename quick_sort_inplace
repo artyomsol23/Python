@@ -1,0 +1,29 @@
+def quick_sort_inplace(arr, low=0, high=None):
+    if high is None:
+        high = len(arr) - 1
+    
+    if low < high:
+        # Разделение массива и получение индекса опорного элемента
+        pivot_index = partition(arr, low, high)
+        
+        # Рекурсивная сортировка левой и правой частей
+        quick_sort_inplace(arr, low, pivot_index - 1)
+        quick_sort_inplace(arr, pivot_index + 1, high)
+
+def partition(arr, low, high):
+    pivot = arr[high]  # Опорный элемент (можно выбрать иначе)
+    i = low  # Индекс для элементов меньше опорного
+    
+    for j in range(low, high):
+        if arr[j] < pivot:
+            arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+    
+    # Помещаем опорный элемент на правильное место
+    arr[i], arr[high] = arr[high], arr[i]
+    return i
+
+# Пример использования
+arr = [3, 6, 8, 10, 1, 2, 1]
+quick_sort_inplace(arr)
+print("Отсортированный массив (in-place):", arr)
