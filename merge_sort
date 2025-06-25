@@ -1,26 +1,21 @@
 def merge_sort(arr):
-    # Проверяем, не является ли массив пустым или состоящим из одного элемента
-    if len(arr) <= 1:
+    if len(arr) <= 1:  # Проверяем, не является ли массив пустым или состоящим из одного элемента
         return arr
     
-    # Разделяем массив на две половины
-    mid = len(arr) // 2
+    mid = len(arr) // 2  # Разделяем массив на две половины
     left_half = arr[:mid]
     right_half = arr[mid:]
     
-    # Рекурсивно сортируем каждую половину
-    left_half = merge_sort(left_half)
+    left_half = merge_sort(left_half)  # Рекурсивно сортируем каждую половину
     right_half = merge_sort(right_half)
     
-    # Объединяем отсортированные половины
-    return merge(left_half, right_half)
+    return merge(left_half, right_half)  # Объединяем отсортированные половины
 
 def merge(left, right):
     result = []
     left_idx, right_idx = 0, 0
     
-    # Сливаем элементы, пока не достигнем конца одного из массивов
-    while left_idx < len(left) and right_idx < len(right):
+    while left_idx < len(left) and right_idx < len(right):  # Сливаем элементы, пока не достигнем конца одного из массивов
         if left[left_idx] < right[right_idx]:
             result.append(left[left_idx])
             left_idx += 1
