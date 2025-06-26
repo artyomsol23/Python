@@ -42,14 +42,12 @@ def switch_layout(text, to_eng=True):
 
 # Примеры использования
 if __name__ == "__main__":
-    # Русский текст, который был набран в русской раскладке, но должен быть в английской
-    russian_text = "руддщ цщкдв"
-    print(switch_layout(russian_text, to_eng=True))  # Выведет: hello world
+
+    russian_text = "руддщ цщкдв"  # Русский текст, который был набран в русской раскладке, но должен быть в английской
+    print(switch_layout(russian_text, to_eng=True))  # hello world
     
-    # Английский текст, который был набран в английской раскладке, но должен быть в русской
-    english_text = "ghbdtn rfr ltkf"
-    print(switch_layout(english_text, to_eng=False))  # Выведет: привет как дела
+    english_text = "ghbdtn rfr ltkf"  # Английский текст, который был набран в английской раскладке, но должен быть в русской
+    print(switch_layout(english_text, to_eng=False))  # привет как дела
     
-    # Пример с символами и регистром
-    mixed_text = "№;%:?*()"
-    print(switch_layout(mixed_text, to_eng=True))  # Выведет: #;$^?&*()
+    mixed_text = "%:?*()№;"  # Пример с символами и регистром
+    print(switch_layout(mixed_text, to_eng=True))  # $^?&*()#;
