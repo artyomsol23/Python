@@ -21,7 +21,7 @@ def switch_layout(text, to_eng=True):
     """
     result = []
     mapping = RUS_TO_ENG if to_eng else ENG_TO_RUS
-    
+
     for char in text:
         lower_char = char.lower()
         if lower_char in mapping:  # Сохраняем регистр символа
@@ -32,31 +32,34 @@ def switch_layout(text, to_eng=True):
             result.append(replaced_char)
         else:  # Если символ не найден в словаре, оставляем как есть
             result.append(char)
-    
-    return ''.join(result)
+
+    return "".join(result)
+
 
 def main():
-    print("Конвертер раскладки клавиатуры")
-    
+    print("==============================")
+    print("КОНВЕРТЕР РАСКЛАДКИ КЛАВИАТУРЫ")
+    print("==============================")
+
     while True:
         print("\nВыберите действие:")
-        print("1. Русский → Английский (был набран русский текст в русской раскладке)")
-        print("2. Английский → Русский (был набран русский текст в английской раскладке)")
+        print("1. Русский → Английский")
+        print("2. Английский → Русский")
         print("3. Выход")
-        
-        choice = input("Ваш выбор (1-3): ").strip()
-        
-        if choice == '3':
-            print("Выход из программы...")
+
+        choice = input("\nВаш выбор: ").strip()
+
+        if choice == "3":
+            print("\nВыход из программы...")
             break
-        
-        if choice not in ('1', '2'):
-            print("Ошибка: введите число от 0 до 2")
+
+        if choice not in ("1", "2"):
+            print("\nОшибка: введите число от 1 до 3")
             continue
-        
-        text = input("Введите текст для преобразования: ")
-        
-        if choice == '1':
+
+        text = input("\nВведите текст для преобразования: ")
+
+        if choice == "1":
             result = switch_layout(text, to_eng=True)
             print("\nРезультат (ru → en):", result)
         else:
@@ -64,9 +67,10 @@ def main():
             print("\nРезультат (en → ru):", result)
 
         cont = input("\nХотите выполнить еще одно преобразование? ").strip().lower()
-        if cont not in ('да', 'yes', '+'):
-            print("Выход из программы...")
+        if cont not in ("да", "yes", "+"):
+            print("\nВыход из программы...")
             break
+
 
 if __name__ == "__main__":
     main()
