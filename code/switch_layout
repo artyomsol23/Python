@@ -16,12 +16,8 @@ ENG_TO_RUS = {
 
 def switch_layout(text, to_eng=True):
     """
-    Заменяет символы в тексте между русской и английской раскладками.
-    
-    :param text: Исходный текст
-    :param to_eng: Если True - переводит русские символы в английские (как если бы набрали на русской раскладке),
-                   Если False - переводит английские символы в русские (как если бы набрали на английской раскладке)
-    :return: Текст с замененными символами
+    True - переводит русские символы в английские (как если бы набрали на русской раскладке),
+    False - переводит английские символы в русские (как если бы набрали на английской раскладке).
     """
     result = []
     mapping = RUS_TO_ENG if to_eng else ENG_TO_RUS
@@ -34,20 +30,44 @@ def switch_layout(text, to_eng=True):
             else:
                 replaced_char = mapping[lower_char]
             result.append(replaced_char)
-        else:
-            # Если символ не найден в словаре, оставляем как есть
+        else:  # Если символ не найден в словаре, оставляем как есть
             result.append(char)
     
     return ''.join(result)
 
-# Примеры использования
-if __name__ == "__main__":
+def main():
+    print("Конвертер раскладки клавиатуры")
+    
+    while True:
+        print("\nВыберите действие:")
+        print("1. Русский → Английский (был набран русский текст в русской раскладке)")
+        print("2. Английский → Русский (был набран русский текст в английской раскладке)")
+        print("3. Выход")
+        
+        choice = input("Ваш выбор (1-3): ").strip()
+        
+        if choice == '3':
+            print("Выход из программы...")
+            break
+        
+        if choice not in ('1', '2'):
+            print("Ошибка: введите число от 0 до 2")
+            continue
+        
+        text = input("Введите текст для преобразования: ")
+        
+        if choice == '1':
+            result = switch_layout(text, to_eng=True)
+            print("\nРезультат (ru → en):", result)
+        else:
+            result = switch_layout(text, to_eng=False)
+            print("\nРезультат (en → ru):", result)
 
-    russian_text = "руддщ цщкдв"  # Русский текст, который был набран в русской раскладке, но должен быть в английской
-    print(switch_layout(russian_text, to_eng=True))  # hello world
-    
-    english_text = "ghbdtn rfr ltkf"  # Английский текст, который был набран в английской раскладке, но должен быть в русской
-    print(switch_layout(english_text, to_eng=False))  # привет как дела
-    
-    mixed_text = "%:?*()№;"  # Пример с символами и регистром
-    print(switch_layout(mixed_text, to_eng=True))  # $^?&*()#;
+        cont = input("\nХотите выполнить еще одно преобразование? ").strip().lower()
+        if cont not in ('да', 'yes', '+'):
+            print("Выход из программы...")
+            break
+
+if __name__ == "__main__":
+    main()
+    input("\nНажмите Enter для выхода...")
