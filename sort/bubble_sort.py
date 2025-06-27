@@ -28,4 +28,4 @@ def bubble_sort(arr):
         if not swapped:
             break  # Выход из цикла, если массив отсортирован
             
-    return arr
+    return arr  # Возвращаем отсортированный массив
