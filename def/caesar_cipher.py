@@ -21,30 +21,3 @@ def caesar_cipher(text, shift, mode='encrypt'):
             result += char
     
     return result
-
-
-# Пример использования
-if __name__ == "__main__":
-    while True:
-        print("\nШифр Цезаря")
-        print("1. Зашифровать")
-        print("2. Расшифровать")
-        print("3. Выход")
-        
-        choice = input("Выберите действие (1/2/3): ")
-        
-        if choice == '3':
-            break
-        
-        if choice in ('1', '2'):
-            text = input("Введите текст: ")
-            shift = int(input("Введите величину сдвига (целое число): "))
-            
-            if choice == '1':
-                encrypted = caesar_cipher(text, shift, 'encrypt')
-                print(f"Зашифрованный текст: {encrypted}")
-            else:
-                decrypted = caesar_cipher(text, shift, 'decrypt')
-                print(f"Расшифрованный текст: {decrypted}")
-        else:
-            print("Неверный ввод. Попробуйте снова.")
