@@ -1,4 +1,4 @@
-def count_vowels(s):
+def count_vowels(text: str) -> int:
     """
     Подсчитывает количество гласных букв в переданном тексте.
     
@@ -11,5 +11,8 @@ def count_vowels(s):
     Возвращает:
         int: Количество гласных букв в тексте
     """
-    vowels = "aeiouаеёиоуыэюя"  # Русские и английские гласные
-    return sum(1 for char in s.lower() if char in vowels)
+    # Строка с гласными буквами (английскими и русскими)
+    vowels = "aeiouаеёиоуыэюя"
+    
+    # Преобразуем текст в нижний регистр и подсчитываем гласные
+    return sum(1 for char in text.lower() if char in vowels)
