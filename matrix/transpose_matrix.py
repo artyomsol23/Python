@@ -1,10 +1,19 @@
 def transpose_matrix(matrix):
     """
     Транспонирует матрицу (заменяет строки на столбцы).
-    """
-    rows = len(matrix)
-    cols = len(matrix[0]) if rows > 0 else 0
     
+    Параметры:
+        matrix (list[list]): Исходная матрица (двумерный список)
+        
+    Возвращает:
+        list[list]: Транспонированная матрица
+    """
+    
+    # Получаем количество строк и столбцов в исходной матрице
+    rows = len(matrix)
+    cols = len(matrix[0]) if rows > 0 else 0  # Проверяем случай пустой матрицы
+    
+    # Создаем новую матрицу, где столбцы становятся строками, для каждого индекса i (бывший столбец) собираем элементы из всех строк j
     transposed = [[matrix[j][i] for j in range(rows)] for i in range(cols)]
     
     return transposed
