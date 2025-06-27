@@ -70,8 +70,3 @@ def main():
         if cont not in ("да", "yes", "+"):
             print("\nВыход из программы...")
             break
-
-
-if __name__ == "__main__":
-    main()
-    input("\nНажмите Enter для выхода...")
