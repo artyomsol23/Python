@@ -1,19 +1,45 @@
 import random
 import math
 
-def fermat_primality_test(n, k=5):
-    if n <= 1:
+def fermat_primality_test(n: int, k: int = 5) -> bool:
+    """
+    Проверяет, является ли число n вероятно простым, используя тест Ферма.
+    Внимание: тест может ошибочно считать числа Кармайкла простыми!
+
+    Параметры:
+        n (int): Число для проверки на простоту.
+        k (int): Количество случайных тестов (по умолчанию 5).
+
+    Возвращает:
+        bool: True, если число вероятно простое, False если составное.
+
+    Примеры:
+        >>> fermat_primality_test(17)  # Простое
+        True
+        >>> fermat_primality_test(561)  # Число Кармайкла (ложноположительный результат)
+        True
+    """
+    # Обработка крайних случаев
+    if n < 2:
         return False
-    if n <= 3:
+    if n in (2, 3):
         return True
+    # Чётные числа, кроме 2, составные
+    if n % 2 == 0:
+        return False
+
     for _ in range(k):
-        a = random.randint(2, n - 1)
+        # Выбираем случайное основание a: 2 ≤ a ≤ n-2
+        a = random.randint(2, n - 2)
+        
+        # Если gcd(a, n) ≠ 1, то n составное
         if math.gcd(a, n) != 1:
             return False
+        
+        # Проверяем a^(n-1) ≡ 1 mod n
         if pow(a, n - 1, n) != 1:
             return False
-    return True  # Вероятно (!) простое
 
-# Пример использования
-print(fermat_primality_test(17))  # True (простое)
-print(fermat_primality_test(561)) # True (561 — число Кармайкла!)
+    # Если все тесты пройдены, число вероятно простое
+    # Но это может быть число Кармайкла (например, 561, 1105, 1729...)
+    return True
