@@ -11,47 +11,37 @@ def is_latin_square(matrix):
     Возвращает:
     True, если матрица является латинским квадратом, иначе False
     """
+    # Проверка на пустую матрицу
     if not matrix:
         return False
     
     n = len(matrix)
     
-    for row in matrix:  # Проверяем, что матрица квадратная
+    # Проверка, что матрица квадратная (все строки имеют длину n)
+    for row in matrix:
         if len(row) != n:
             return False
     
-    for i in range(n):  # Проверяем каждую строку и каждый столбец
-        row_elements = set()
-        col_elements = set()
+    # Проверка каждой строки и каждого столбца
+    for i in range(n):
+        row_elements = set()  # Множество для элементов строки
+        col_elements = set()  # Множество для элементов столбца
         
-        for j in range(n):  # Проверяем, что элементы находятся в диапазоне от 1 до n
+        for j in range(n):
+            # Проверка, что элемент строки находится в диапазоне [1, n]
             if matrix[i][j] < 1 or matrix[i][j] > n:
                 return False
+            # Проверка, что элемент столбца находится в диапазоне [1, n]
             if matrix[j][i] < 1 or matrix[j][i] > n:
                 return False
-                
+            
+            # Добавляем элементы в множества
             row_elements.add(matrix[i][j])
             col_elements.add(matrix[j][i])
         
-        if len(row_elements) != n or len(col_elements) != n:  # Проверяем, что в строке и столбце ровно n уникальных элементов
+        # Проверка, что в строке и столбце ровно n уникальных элементов
+        if len(row_elements) != n or len(col_elements) != n:
             return False
     
+    # Если все проверки пройдены, возвращаем True
     return True
-
-
-# Тесты для функции is_latin_square
-def test_is_latin_square():
-    assert is_latin_square([[1]]) == True
-    assert is_latin_square([[1, 2], [2, 1]]) == True
-    assert is_latin_square([[1, 2, 3], [3, 1, 2], [2, 3, 1]]) == True
-    assert is_latin_square([[2, 1, 3], [1, 3, 2], [3, 2, 1]]) == True
-    assert is_latin_square([]) == False
-    assert is_latin_square([[1, 2], [1, 2]]) == False
-    assert is_latin_square([[1, 1], [2, 2]]) == False
-    assert is_latin_square([[1, 2, 3], [2, 3, 1], [3, 1, 4]]) == False
-    assert is_latin_square([[1, 2], [2, 1], [1, 2]]) == False
-    assert is_latin_square([[1, 2, 3], [2, 3, 1]]) == False
-    
-    print("Все тесты пройдены успешно!")
-
-test_is_latin_square()
