@@ -2,23 +2,37 @@ def square_matrix_power(A, power):
     """
     Возведение квадратной матрицы A в степень power (целое число ≥ 0).
     Использует алгоритм быстрого возведения в степень.
+    
+    Параметры:
+        A (list[list]): Квадратная матрица.
+        power (int): Неотрицательная целая степень.
+    
+    Возвращает:
+        list[list]: Матрица A, возведённая в степень power.
+    
+    Исключения:
+        ValueError: Если матрица не квадратная или степень отрицательная.
     """
+    # Проверка, что матрица квадратная
     if len(A) != len(A[0]):
         raise ValueError("Матрица должна быть квадратной!")
+    
+    # Проверка, что степень неотрицательная
     if power < 0:
         raise ValueError("Степень должна быть неотрицательной!")
     
     n = len(A)
     
-    result = [[0]*n for _ in range(n)]
+    # Инициализация единичной матрицы (результат для степени 0)
+    result = [[0] * n for _ in range(n)]
     for i in range(n):
         result[i][i] = 1
     
+    # Алгоритм быстрого возведения в степень
     while power > 0:
         if power % 2 == 1:
-            result = matrix_multiplication(result, A)
-        A = matrix_multiplication(A, A)
-        power = power // 2
+            result = matrix_multiplication(result, A)  # Умножаем на текущую матрицу, если степень нечётная
+        A = matrix_multiplication(A, A)  # Возводим матрицу в квадрат
+        power = power // 2  # Уменьшаем степень вдвое
     
     return result
-  
