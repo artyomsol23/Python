@@ -1,4 +1,4 @@
-def is_symmetric_main(matrix):
+def is_main_symmetric(matrix):
     """Проверяет, является ли матрица симметричной относительно главной диагонали."""
     rows = len(matrix)
     cols = len(matrix[0]) if rows > 0 else 0
@@ -13,13 +13,13 @@ def is_symmetric_main(matrix):
     return True
 
 # Пример использования
-matrix_symmetric_main = [
+matrix__main_symmetric = [
     [1, 2, 3],
     [2, 4, 5],
     [3, 5, 6],
 ]
 
-matrix_non_symmetric_main = [
+matrix_non_main_symmetric = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
