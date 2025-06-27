@@ -55,4 +55,4 @@ def merge(left, right):
     # Добавляем оставшиеся элементы из правого массива (если они есть)
     result.extend(right[right_idx:])
     
-    return result
+    return result  # Возвращаем отсортированный массив
