@@ -1,4 +1,4 @@
-def matrix_division(A, B):
+def square_matrix_division(A, B):
     """
     Деление матриц A на B (A × обратная(B)).
     Возвращает матрицу C = A × B^(-1).
