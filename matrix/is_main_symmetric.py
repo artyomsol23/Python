@@ -1,23 +1,12 @@
-def is_main_symmetric(matrix):
-    """
-    Проверяет, является ли матрица симметричной относительно главной диагонали.
+def is_main_symmetric(matrix: list[list[int]]):
+    rows = len(matrix)
+    cols = len(matrix[0]) if rows > 0 else 0
     
-    Параметры:
-        matrix (list of lists): Входная матрица (двумерный список).
-        
-    Возвращает:
-        bool: True, если матрица симметрична, иначе False.
-    """
-    rows = len(matrix)          # Количество строк в матрице
-    cols = len(matrix[0]) if rows > 0 else 0  # Количество столбцов (если матрица не пустая)
-    
-    # Матрица должна быть квадратной
     if rows != cols:
         return False
     
-    # Проверяем симметричность, сравнивая элементы выше главной диагонал с соответствующими элементами ниже диагонали
     for i in range(rows):
-        for j in range(i + 1, cols):  # Идём только по верхнему треугольнику
+        for j in range(i + 1, cols):
             if matrix[i][j] != matrix[j][i]:
                 return False
     return True
