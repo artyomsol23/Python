@@ -1,16 +1,4 @@
-def fibonacci_recursive(n):
-    """
-    Вычисляет n-ное число Фибоначчи рекурсивным методом.
-    
-    Параметры:
-        n (int): Номер числа Фибоначчи (начинается с 0)
-    
-    Возвращает:
-        int: n-ное число Фибоначчи
-    
-    Примечание:
-        Для больших n может быть очень медленным из-за экспоненциальной сложности O(2^n)
-    """
+def fibonacci_recursive(n: int):
     if n <= 1:
-        return n  # Базовый случай: F(0) = 0, F(1) = 1
-    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)  # Рекурсивный вызов
+        return n
+    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
