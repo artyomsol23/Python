@@ -1,25 +1,10 @@
-def quick_sort(arr):
-    """
-    Быстрая сортировка (Quick Sort) - алгоритм сортировки с использованием стратегии "разделяй и властвуй".
-    
-    Параметры:
-        arr (list): Список элементов для сортировки.
-    
-    Возвращает:
-        list: Отсортированный список.
-    """
-    
-    # Базовый случай рекурсии: если массив пуст или содержит 1 элемент
+def quick_sort(arr: list):
     if len(arr) <= 1:
         return arr
     
-    # Выбираем опорный элемент (здесь - средний элемент массива)
-    pivot = arr[len(arr) // 2]
+    pivot = arr[len(arr) // 2] 
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
     
-    # Разделяем массив на три части:
-    left = [x for x in arr if x < pivot]   # Элементы меньше опорного
-    middle = [x for x in arr if x == pivot] # Элементы, равные опорному
-    right = [x for x in arr if x > pivot]   # Элементы больше опорного
-    
-    # Рекурсивно сортируем подмассивы и объединяем результат
     return quick_sort(left) + middle + quick_sort(right)
