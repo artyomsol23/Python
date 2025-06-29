@@ -1,21 +1,7 @@
-import math
-
-def euclidean_distance(a, b):
-    """
-    Вычисляет евклидово расстояние между двумя точками в 2D-пространстве.
+def euclidean_distance(a: tuple[float, float], b: tuple[float, float]):
+    dx = a[0] - b[0]
+    dy = a[1] - b[1]
     
-    Параметры:
-        a (tuple/list): Координаты первой точки в формате (x1, y1)
-        b (tuple/list): Координаты второй точки в формате (x2, y2)
-    
-    Возвращает:
-        float: Расстояние между точками a и b
-    """
-    # Вычисляем разницу координат по оси X и Y
-    dx = a[0] - b[0]  # Разница по x-координате
-    dy = a[1] - b[1]  # Разница по y-координате
-    
-    # Вычисляем квадрат разниц, суммируем и извлекаем корень
-    distance = math.sqrt(dx**2 + dy**2)
+    distance = (dx ** 2 + dy ** 2) ** 0.5
     
     return distance
