@@ -1,21 +1,6 @@
-def matrix_scalar_multiply_inplace(A, c):
-    """
-    Умножает матрицу на скаляр, изменяя исходную матрицу (in-place).
-    
-    Параметры:
-        A (list of list of int/float): исходная матрица (двумерный список)
-        c (int/float): скаляр для умножения
-    
-    Возвращает:
-        list of list of int/float: модифицированная матрица A (исходная матрица изменяется)
-    
-    Примечание:
-        Функция изменяет переданную матрицу A, а также возвращает её для удобства.
-    """
-    # Проходим по всем строкам матрицы
+def matrix_scalar_multiply_inplace(A: list[list[int]], c: float):
     for i in range(len(A)):
-        # Проходим по всем элементам в строке
         for j in range(len(A[0])):
-            A[i][j] *= c  # Умножаем каждый элемент на скаляр
+            A[i][j] *= c
     
     return A
