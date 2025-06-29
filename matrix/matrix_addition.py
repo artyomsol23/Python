@@ -1,30 +1,11 @@
-def matrix_addition(A, B):
-    """
-    Сложение двух матриц A и B одинакового размера.
-    Возвращает новую матрицу C = A + B.
-    
-    Параметры:
-        A (list of lists): Первая матрица (двумерный список)
-        B (list of lists): Вторая матрица (двумерный список)
-    
-    Возвращает:
-        list of lists: Результирующая матрица C
-    
-    Исключения:
-        ValueError: Если размеры матриц не совпадают
-    """
-    # Проверка совпадения размеров матриц
+def matrix_addition(A: list[list[int]], B: list[list[int]]):
     if len(A) != len(B) or len(A[0]) != len(B[0]):
         raise ValueError("Матрицы должны быть одного размера!")
     
-    # Определение количества строк и столбцов
-    rows = len(A)     # Количество строк
-    cols = len(A[0])  # Количество столбцов
+    rows, cols = len(A), len(A[0])
     
-    # Создание результирующей матрицы C, заполненной нулями
     C = [[0 for _ in range(cols)] for _ in range(rows)]
     
-    # Поэлементное сложение матриц
     for i in range(rows):
         for j in range(cols):
             C[i][j] = A[i][j] + B[i][j]
