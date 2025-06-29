@@ -1,8 +1,10 @@
 def quick_sort(arr: list, low=None, high=None):
     if low is None:
         low = 0
+
     if high is None:
         high = len(arr) - 1  
+
     if low < high:
         pivot_index = partition(arr, low, high)
         quick_sort(arr, low, pivot_index - 1)
