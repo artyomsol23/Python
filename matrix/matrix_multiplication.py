@@ -1,4 +1,4 @@
-def matrix_multiplication(A: list[list[int]], B: list[list[int]]):
+def matrix_multiplication(A: list[list[int]], B: list[list[int]]) -> list[list[int]]:
     if len(A[0]) != len(B):
         raise ValueError("Число столбцов A должно равняться числу строк B!")
     
