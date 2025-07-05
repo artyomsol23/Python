@@ -1,4 +1,4 @@
-def find_substring(main_string: str, sub_string: str):
+def find_substring(main_string: str, sub_string: str) -> list[int]:
     len_main, len_sub = len(main_string), len(sub_string)
     
     positions = []
