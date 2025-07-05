@@ -1,4 +1,4 @@
-def quick_sort(arr: list, low=None, high=None):
+def quick_sort(arr: list, low = None, high = None) -> list:
     if low is None:
         low = 0
 
@@ -13,7 +13,7 @@ def quick_sort(arr: list, low=None, high=None):
     return arr
 
 
-def partition(arr: list, low: int, high: int):
+def partition(arr: list, low: int, high: int) -> int:
     pivot = arr[high]
     i = low - 1
     
