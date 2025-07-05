@@ -1,4 +1,4 @@
-def build_shifted_matrix(rows: int, cols: int, direction="left"):
+def build_shifted_matrix(rows: int, cols: int, direction: str = "left") -> list[list[int]]:
     matrix = []
     
     for i in range(rows):
