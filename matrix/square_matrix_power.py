@@ -1,4 +1,4 @@
-def square_matrix_power(A: list[list[int]], power: int) -> int:
+def square_matrix_power(A: list[list[int]], power: int) -> list[list[int]]:
     if len(A) != len(A[0]):
         raise ValueError("Матрица должна быть квадратной!")
     
