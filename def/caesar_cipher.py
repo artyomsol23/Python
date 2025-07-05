@@ -1,4 +1,4 @@
-def caesar_cipher(text: str, shift: int, mode='encrypt'):
+def caesar_cipher(text: str, shift: int, mode='encrypt') -> str:
     result = ""
     
     if mode == 'decrypt':  # 'encrypt' - шифрование, 'decrypt' - дешифрование
