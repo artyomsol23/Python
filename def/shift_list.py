@@ -1,4 +1,4 @@
-def shift_list(lst: list, k: int, direction="left"):
+def shift_list(lst: list, k: int, direction="left") -> list:
     if not lst:
         return lst
     
