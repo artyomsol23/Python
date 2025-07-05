@@ -1,4 +1,4 @@
-def square_matrix_2_or_3_inverse(M: list[list[int]]):
+def square_matrix_2_or_3_inverse(M: list[list[int]]) -> list[list[int]]:
     n = len(M)
     if n != len(M[0]):
         raise ValueError("Матрица должна быть квадратной!")
