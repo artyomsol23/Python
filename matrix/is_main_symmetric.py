@@ -1,4 +1,4 @@
-def is_main_symmetric(matrix: list[list[int]]):
+def is_main_symmetric(matrix: list[list[int]]) -> bool:
     rows = len(matrix)
     cols = len(matrix[0]) if rows > 0 else 0
     
