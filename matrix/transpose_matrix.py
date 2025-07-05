@@ -1,4 +1,4 @@
-def transpose_matrix(matrix: list[list[int]]):
+def transpose_matrix(matrix: list[list[int]]) -> list[list[int]]:
     rows = len(matrix)
     cols = len(matrix[0]) if rows > 0 else 0  # Проверяем случай пустой матрицы
 
