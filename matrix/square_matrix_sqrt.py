@@ -1,4 +1,4 @@
-def matrix_sqrt(A: list[list[int]], max_iter=100, tol=1e-6):    
+def matrix_sqrt(A: list[list[int]], max_iter = 100, tol = 1e-6) -> list[list[float]]:    
     if len(A) != len(A[0]):
         raise ValueError("Матрица должна быть квадратной!")
 
