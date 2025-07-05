@@ -1,7 +1,7 @@
 import random
 import math
 
-def fermat_primality_test(n: int, k: int = 5):
+def fermat_primality_test(n: int, k: int = 5) -> bool:
     if n < 2:
         return False
     if n in (2, 3):
