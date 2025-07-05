@@ -1,4 +1,4 @@
-def is_skew_symmetric(matrix: list[list[int]]):
+def is_skew_symmetric(matrix: list[list[int]]) -> bool:
     n = len(matrix)
     
     for row in matrix:
