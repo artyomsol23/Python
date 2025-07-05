@@ -1,4 +1,4 @@
-def compute_prefix_function(pattern: str):
+def compute_prefix_function(pattern: str) -> list[int]:
     m = len(pattern)
     prefix = [0] * m
     j = 0
@@ -15,7 +15,7 @@ def compute_prefix_function(pattern: str):
     return prefix
 
 
-def kmp_search(text: str, pattern: str):
+def kmp_search(text: str, pattern: str) -> int:
     n, m = len(text), len(pattern)
     
     if m == 0:
