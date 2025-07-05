@@ -1,4 +1,4 @@
-def quick_sort(arr: list):
+def quick_sort(arr: list) -> list:
     if len(arr) <= 1:
         return arr
     
