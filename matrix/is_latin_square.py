@@ -1,4 +1,4 @@
-def is_latin_square(matrix: list[list[int]]):
+def is_latin_square(matrix: list[list[int]]) -> bool:
     if not matrix:
         return False
     
