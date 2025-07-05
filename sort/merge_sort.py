@@ -1,4 +1,4 @@
-def merge_sort(arr: list):
+def merge_sort(arr: list) -> list:
     if len(arr) <= 1:
         return arr
     
@@ -11,19 +11,19 @@ def merge_sort(arr: list):
     
     return merge(left_half, right_half)
 
-def merge(left: list, right: list):
+def merge(left: list, right: list) -> list:
     result = []
-    left_idx, right_idx = 0, 0
+    left_i, right_i = 0, 0
     
-    while left_idx < len(left) and right_idx < len(right):
-        if left[left_idx] < right[right_idx]:
-            result.append(left[left_idx])
-            left_idx += 1
+    while left_i < len(left) and right_i < len(right):
+        if left[left_i] < right[right_i]:
+            result.append(left[left_i])
+            left_i += 1
         else:
-            result.append(right[right_idx])
-            right_idx += 1
+            result.append(right[right_i])
+            right_i += 1
     
-    result.extend(left[left_idx:])
-    result.extend(right[right_idx:])
+    result.extend(left[left_i:])
+    result.extend(right[right_i:])
     
     return result
