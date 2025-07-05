@@ -4,10 +4,10 @@ def matrix_subtraction(A: list[list[int]], B: list[list[int]]) -> list[list[int]
     
     rows, cols = len(A), len(A[0])
     
-    C = [[0 for _ in range(cols)] for _ in range(rows)]
+    result = [[0 for _ in range(cols)] for _ in range(rows)]
     
     for i in range(rows):
         for j in range(cols):
-            C[i][j] = A[i][j] - B[i][j]
+            result[i][j] = A[i][j] - B[i][j]
     
-    return C
+    return result
