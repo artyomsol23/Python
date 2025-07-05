@@ -1,4 +1,4 @@
-def euclidean_distance(a: tuple[float, float], b: tuple[float, float]):
+def euclidean_distance(a: tuple[float, float], b: tuple[float, float]) -> tuple[float, float]:
     dx = a[0] - b[0]
     dy = a[1] - b[1]
     
