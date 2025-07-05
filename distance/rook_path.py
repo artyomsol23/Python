@@ -1,4 +1,4 @@
-def rook_path(start: tuple[int, int], end: tuple[int, int]):
+def rook_path(start: tuple[int, int], end: tuple[int, int]) -> list[tuple[int, int]]:
     x1, y1 = start
     x2, y2 = end
     path = []
