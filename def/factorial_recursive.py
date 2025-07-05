@@ -1,4 +1,4 @@
-def factorial_recursive(n: int):
+def factorial_recursive(n: int) -> int:
     if n == 0:
         return 1
     else:
