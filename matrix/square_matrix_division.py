@@ -1,4 +1,4 @@
-def square_matrix_division(A: list[list[int]], B: list[list[int]]):
+def square_matrix_division(A: list[list[int]], B: list[list[int]]) -> list[list[int]]:
     if len(B) != len(B[0]):
         raise ValueError("Матрица B должна быть квадратной!")
     
