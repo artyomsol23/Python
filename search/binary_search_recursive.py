@@ -1,4 +1,4 @@
-def binary_search_recursive(arr: list, target: int, left: int, right: int):
+def binary_search_recursive(arr: list, target: int, left: int, right: int) -> int:
     if left > right:
         return -1
     
