@@ -1,6 +1,6 @@
 from math import log10
 
-def calculate_tf_idf(target_word: str, docs: list):
+def calculate_tf_idf(target_word: str, docs: list) -> float:
   if not docs:
         return 0.0
     
