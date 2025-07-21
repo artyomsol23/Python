@@ -1,4 +1,4 @@
-def gini(y:nd.array) -> float:
+def gini(y: np.ndarray) -> float:
     if len(y) == 0:
         return 0.0
     _, counts = np.unique(y, return_counts=True)
