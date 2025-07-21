@@ -1,4 +1,4 @@
-def gini(labels: List[Any]) -> float:
+def gini(labels: list) -> float:
     classes = {}
     for label in labels:
         if label not in classes:
