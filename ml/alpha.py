@@ -13,4 +13,3 @@ def alpha(error_rate: float) -> float:
   alpha = 0.5 * math.log((1 - error_rate + 1e-10) / (error_rate + 1e-10))
   
   return alpha
-  
