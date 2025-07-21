@@ -1,3 +1,5 @@
+import numpy as np
+
 def gini(y: np.ndarray) -> float:
     if len(y) == 0:
         return 0.0
