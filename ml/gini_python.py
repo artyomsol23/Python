@@ -1,5 +1,4 @@
-def gini(labels):
-    # Подсчет количества каждого уникального класса
+def gini(labels: List[Any]) -> float:
     classes = {}
     for label in labels:
         if label not in classes:
