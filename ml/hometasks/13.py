@@ -4,7 +4,6 @@ import numpy as np
 def func(x):
     return 0.5 * x + 0.2 * x ** 2 - 0.1 * x ** 3
 
-
 def df(x):
     return 0.5 + 0.4 * x - 0.3 * x ** 2  # здесь выражение производной функции f(x)
 
