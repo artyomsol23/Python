@@ -2,7 +2,7 @@ import numpy as np
 
 # исходная функция, которую нужно аппроксимировать моделью a(x)
 def func(x):
-    return 0.5 * x ** 2 - 0.1 * 1/np.exp(-x) + 0.5 * np.cos(2 * x) - 2.
+    return 0.5 * x ** 2 - 0.1 * 1 / np.exp(-x) + 0.5 * np.cos(2 * x) - 2.
 
 
 # здесь объявляйте необходимые функции
@@ -34,17 +34,17 @@ for _ in range(N):
     x_k = coord_x[k]
     y_k = coord_y[k]
     
-    grad = gradient(x_k, y_k, w)
-    w = w - eta * grad
+    grad = gradient(xk, yk, w)
+    w -= eta * grad
     
-    L_k = loss(x_k, y_k, w)
-    Qe = lm * L_k + (1 - lm) * Qe
+    Lk = loss(xk, yk, w)
+    Qe = lm * Lk + (1 - lm) * Qe
 
 total_loss = 0.0
 
 for i in range(sz):
-    x_i = coord_x[i]
-    y_i = coord_y[i]
-    total_loss += loss(x_i, y_i, w)
+    xi = coord_x[i]
+    yi = coord_y[i]
+    total_loss += loss(xi, yi, w)
 
 Q = total_loss / sz
