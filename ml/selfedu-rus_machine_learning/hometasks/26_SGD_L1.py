@@ -47,9 +47,9 @@ for _ in range(N):
     grad /= batch_size
     Qe = lm * Qk + (1 - lm) * Qe
     
-    w_tilde = np.copy(w)
-    w_tilde[0] = 0
-    w = w - nt * (grad + lm_l1 * np.sign(w_tilde))
+    w_l1 = np.copy(w)
+    w_l1[0] = 0
+    w = w - nt * (grad + lm_l1 * np.sign(w_l1))
 
 M = np.dot(x_train, w) * y_train
 Q = np.mean(M < 0)
