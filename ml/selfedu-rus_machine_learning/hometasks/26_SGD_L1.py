@@ -32,14 +32,13 @@ np.random.seed(0) # генерация одинаковых последоват
 
 # здесь продолжайте программу
 for _ in range(N):
-    k = np.random.randint(0, n_train - batch_size - 1)
-    
+    k = np.random.randint(0, n_train - batch_size - 1)    
     Qk = 0.0
     grad = np.zeros_like(w)
     
     for i in range(k, k + batch_size):
-        xi = x_train[i]
-        yi = y_train[i]
+        xi, yi = x_train[i], y_train[i]
+        
         Qk += loss(w, xi, yi)
         grad += df(w, xi, yi)
     
@@ -48,7 +47,7 @@ for _ in range(N):
     Qe = lm * Qk + (1 - lm) * Qe
     
     w_l1 = np.copy(w)
-    w_l1[0] = 0
+    w_l1[0] = 0    
     w = w - nt * (grad + lm_l1 * np.sign(w_l1))
 
 M = np.dot(x_train, w) * y_train
