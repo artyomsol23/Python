@@ -68,6 +68,13 @@ def mse_l2_loss(y_true, y_pred, w, alpha=0.01):
     l2 = alpha * np.sum(w ** 2)
     return mse + l2
 
+# MSE для батча данных
+def mse_batch_loss(y_true, y_pred, batch_size):
+    errors = (y_true - y_pred) ** 2
+    if batch_size is None:
+        batch_size = len(y_true)
+    return np.sum(errors) / batch_size + 1e-10
+
 # сигмоидная
 def sig_loss(w, x, y):
     M = np.dot(w, x) * y
