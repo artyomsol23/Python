@@ -12,10 +12,10 @@ ma = [np.random.normal(M, np.sqrt(D / 10), 2) for n in range(K)]        # нач
 ro = lambda x, y: np.mean(np.abs(np.array(x) - np.array(y)))  # MAE
 
 for _ in range(10):
-    X = [[] for _ in range(K)]
+    X = [[] for _ in range(K)]  # инициализация пустого списка для хранения объектов кластеров 
     
     for x_vect in data_x:
-        r = [ro(x_vect, m) for m in ma]
-        X[np.argmin(r)].append(x_vect)
+        r = [ro(x_vect, m) for m in ma]  # вычисление расстояний для текущего образа до центров кластеров
+        X[np.argmin(r)].append(x_vect)   # добавление образа к кластеру с ближайшим центром
 
-    ma = np.array([np.mean(xx, axis=0) for xx in X])
+    ma = np.array([np.mean(xx, axis=0) for xx in X]) # обновление центров кластеров
