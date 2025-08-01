@@ -30,7 +30,7 @@ np.random.seed(0) # генерация одинаковых последоват
 
 # здесь продолжайте программу
 for _ in range(N):
-    k = np.random.randint(0, n_train - 1)
+    k = np.random.randint(0, n_train)
     x_k = x_train[k]
     y_k = y_train[k]
     
