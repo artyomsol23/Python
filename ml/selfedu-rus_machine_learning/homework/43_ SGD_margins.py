@@ -45,7 +45,7 @@ batch_size = 10 # размер мини-батча (величина K = 10)
 
 # здесь продолжайте программу
 for _ in range(N):
-    k = np.random.randint(0, n_train-batch_size-1)  # n_train - размер выборки (массива x_train)
+    k = np.random.randint(0, n_train-batch_size)  # n_train - размер выборки (массива x_train)
     grad = np.zeros_like(w)
     
     for i in range(k, k + batch_size):
