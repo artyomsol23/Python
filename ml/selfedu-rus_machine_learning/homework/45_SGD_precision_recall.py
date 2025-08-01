@@ -2,13 +2,13 @@ import numpy as np
 
 # логарифмическая функция потерь
 def loss(w, x, y):
-	# здесь реализация функции потерь
+    # здесь реализация функции потерь
     M = y * np.dot(w, x)
     return np.log2(1 + np.exp(-M))
 
 # производная логарифмической функции потерь по вектору w
 def df(w, x, y):
-	# здесь реализация производной функции потерь
+    # здесь реализация производной функции потерь
     M = y * np.dot(w, x)
     return -(np.exp(-M) * y * x.T) / ((1 + np.exp(-M)) * np.log(2))
     
@@ -28,7 +28,7 @@ np.random.seed(0) # генерация одинаковых последоват
 
 # здесь продолжайте программу
 for _ in range(N):
-    k = np.random.randint(0, n_train - 1)
+    k = np.random.randint(0, n_train)
     
     grad = df(w, x_train[k], y_train[k])
     w -= nt * grad
