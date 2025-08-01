@@ -39,7 +39,7 @@ np.random.seed(0) # генерация одинаковых последоват
 
 # здесь продолжайте программу
 for _ in range(n_iter):
-    k = np.random.randint(0, sz - batch_size - 1)
+    k = np.random.randint(0, sz - batch_size)
     
     Qk = 0.0
     grad = np.zeros_like(w)
