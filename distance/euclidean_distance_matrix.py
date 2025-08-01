@@ -1,3 +1,5 @@
+import numpy as np
+
 def euclidean_distance_matrix(X, Y):
     X_sq = np.sum(X ** 2, axis=1, keepdims=True)
     Y_sq = np.sum(Y ** 2, axis=1)
