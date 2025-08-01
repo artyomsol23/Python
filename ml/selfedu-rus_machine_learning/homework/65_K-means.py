@@ -18,4 +18,4 @@ for _ in range(10):
         r = [ro(x_vect, m) for m in ma]
         X[np.argmin(r)].append(x_vect)
 
-    ma = np.array([np.mean(cluster, axis=0) for cluster in X])
+    ma = np.array([np.mean(xx, axis=0) for xx in X])
