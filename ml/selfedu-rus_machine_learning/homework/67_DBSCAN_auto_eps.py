@@ -10,6 +10,7 @@ eps = 10
 while True:
     clustering = DBSCAN(eps=eps, min_samples=3, metric='euclidean')
     res = clustering.fit_predict(X)
+    
     if len(np.unique(res)) == 3 and (res != -1).all():
         break
     else:
