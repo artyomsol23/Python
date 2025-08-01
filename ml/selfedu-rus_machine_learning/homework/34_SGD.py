@@ -31,7 +31,7 @@ np.random.seed(0) # генерация одинаковых последоват
 
 # здесь продолжайте программу
 for _ in range(N):
-    k = np.random.randint(0, sz - 1)
+    k = np.random.randint(0, sz)
     xk, yk = coord_x[k], coord_y[k]
     
     grad = gradient(xk, yk, w)
