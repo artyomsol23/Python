@@ -41,7 +41,7 @@ np.random.seed(0) # генерация одинаковых последоват
 Qe = np.mean([loss(w, x, y) for x, y in zip(coord_x, coord_y)])
 
 for _ in range(n_iter):
-    k = np.random.randint(0, sz - batch_size - 1)
+    k = np.random.randint(0, sz - batch_size)
     
     grad = np.zeros(N)
     Qk = 0.0
