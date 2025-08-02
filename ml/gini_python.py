@@ -9,11 +9,11 @@ def gini(labels: list) -> float:
     if total == 0:
         return 0
     
-    sum_squares = 0.0
+    sum = 0.0
     for count in classes.values():
-        proportion = count / total
-        sum_squares += proportion ** 2
+        p = count / total
+        sum += p ** 2
     
-    gini = 1 - sum_squares
+    gini = 1 - sum
     return gini
   
