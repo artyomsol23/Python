@@ -18,7 +18,7 @@ def gini(y: np.ndarray) -> float:
 S0 = gini(y_train)
 N0 = len(y_train)
 IG = -1
-t0 = None
+t0 = 0.0
 
 range_t = np.arange(min(x_train[:, 0]) + 0.1, max(x_train[:, 0]) - 0.1, 0.1)
 
