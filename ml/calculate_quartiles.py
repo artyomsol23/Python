@@ -1,6 +1,6 @@
 import numpy as np
 
-def calculate_quartiles(data: list[float]) -> dict[str, float]::
+def calculate_quartiles(data: list) -> dict:
     if not data:
         raise ValueError("Входной список данных пуст")
 
