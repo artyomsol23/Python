@@ -27,7 +27,6 @@ for t in range_t:
     right_i = np.where(x_train[:, 0] > t)[0] 
     y1, y2 = y_train[left_i], y_train[right_i]
     N1, N2 = len(y1), len(y2)
-    N0 = N1 + N2
     
     if N1 == 0 or N2 == 0:
         continue
