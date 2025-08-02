@@ -36,7 +36,7 @@ for j in [0, 1]:
 
         S1, S2 = gini(y1), gini(y2)
 
-        IG_new = S0 - ((N1 / N0 * S1) + (N2 / N0 * S2))
+        IG_new = S0 - (((N1 / N0) * S1) + ((N2 / N0) * S2))
 
         if IG_new > IG:
             IG = IG_new
