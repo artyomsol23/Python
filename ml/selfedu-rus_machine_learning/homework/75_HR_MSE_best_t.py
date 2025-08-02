@@ -8,7 +8,6 @@ IG = -1
 th = 0.0
 N0 = len(y)
 b = np.mean(y)
-
 HR = np.sum((b - y) ** 2)
 
 for t in x:
