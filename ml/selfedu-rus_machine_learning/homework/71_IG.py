@@ -16,4 +16,4 @@ S0 = 1 - (P0 ** 2 + P1 ** 2)
 S1 = 1 - (P0_left ** 2 + P1_left ** 2)
 S2 = 1 - (P0_right ** 2 + P1_right ** 2)
 
-IG = S0 - ((len(X_left) / len(X)) * S1 + (len(X_right) / len(X)) * S2)  # информационный выигрыш
+IG = S0 - (((len(X_left) / len(X)) * S1) + ((len(X_right) / len(X)) * S2))  # информационный выигрыш
