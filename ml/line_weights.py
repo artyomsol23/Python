@@ -8,6 +8,7 @@ def line_weights(x1: float, y1: float, x2: float, y2: float) -> np.array:
 
     # нормировка
     gcd_all = math.gcd(math.gcd(abs(int(w0)), math.gcd(abs(int(w1)), abs(int(w2))))
+                       
     if gcd_all > 1:
         w0 /= gcd_all
         w1 /= gcd_all
