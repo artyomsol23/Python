@@ -16,9 +16,9 @@ coord_y = func(coord_x) # значения функции по оси ордин
 sz = len(coord_x) # общее число отсчетов
 
 # здесь продолжайте программу
-w=[-1.59, -0.69, 0.278, 0.497, -0.106]
+w = [-1.59, -0.69, 0.278, 0.497, -0.106]
 
-predicted_y = model(coord_x, w)
-loss = np.abs(predicted_y - coord_y)
+predicted = model(coord_x, w)
+loss = np.abs(predicted - coord_y)
 
 Q = np.mean(loss)
