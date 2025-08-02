@@ -17,7 +17,7 @@ sz = len(coord_x) # общее число отсчетов
 # здесь продолжайте программу
 w = [1.11, -0.26, 0.061, 0.0226, 0.00178]
 
-predicted_y = model(coord_x, w)
-loss = (predicted_y - coord_y) ** 2
+predict = model(coord_x, w)
+loss = (predict - coord_y) ** 2
 
 Q = np.mean(loss)
