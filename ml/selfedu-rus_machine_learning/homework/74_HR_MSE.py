@@ -12,7 +12,7 @@ right_i = np.where(x >= t)[0]
 y1, y2 = y[left_i], y[right_i]
 b, b1, b2 = np.mean(y), np.mean(y1), np.mean(y2)
 
-# MSE
+# MSE (impurity)
 HR = np.sum((b - y) ** 2)
 HR1 = np.sum((b1 - y1) ** 2)
 HR2 = np.sum((b2 - y2) ** 2)
