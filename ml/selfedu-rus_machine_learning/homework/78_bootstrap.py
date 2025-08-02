@@ -17,3 +17,5 @@ indx3 = np.random.randint(0, t_sz, size=t_sz)
 X1 = x_train[indx1]
 X2 = x_train[indx2]
 X3 = x_train[indx3]
+
+# X1, X2, X3 = [x_train[np.random.randint(0, t_sz, size=t_sz)] for _ in range(3)]
