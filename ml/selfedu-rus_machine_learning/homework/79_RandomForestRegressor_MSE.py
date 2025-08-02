@@ -8,9 +8,9 @@ x = x.reshape(-1, 1)
 T = 5  # число деревьев
 
 # здесь продолжайте программу
-rf = RandomForestRegressor(max_depth=8, n_estimators=T, random_state=1)
-rf.fit(x, y)
+rf_reg = RandomForestRegressor(max_depth=8, n_estimators=T, random_state=1)
+rf_reg.fit(x, y)
 
-pr_y = rf.predict(x)
+pr_y = rf_reg.predict(x)
 
 Q = np.mean((pr_y - y) ** 2)
