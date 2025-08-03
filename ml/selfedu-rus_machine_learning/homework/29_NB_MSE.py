@@ -16,6 +16,7 @@ y_train = func(coord_x) # целевые выходные значения
 
 # здесь продолжайте программу
 X, y = x_train, y_train
+
 w = np.linalg.inv(X.T @ X) @ X.T @ y  # нормальное уравнение линейной регрессии
 
 a_x = model(w, coord_x)
