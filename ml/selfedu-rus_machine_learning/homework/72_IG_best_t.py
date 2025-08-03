@@ -11,15 +11,16 @@ y_train = np.array(data_y)
 def gini(y: np.ndarray) -> float:
     if len(y) == 0:
         return 0.0
+    
     y_transformed = (y == 1)  # для преобразования {-1, 1} в {0, 1}:
     proportions = np.bincount(y_transformed) / len(y)
+    
     return 1 - np.sum(proportions ** 2)
 
 S0 = gini(y_train)
 N0 = len(y_train)
 IG = -1
 t0 = 0.0
-
 range_t = np.arange(min(x_train[:, 0]) + 0.1, max(x_train[:, 0]) - 0.1, 0.1)
 
 for t in range_t:
