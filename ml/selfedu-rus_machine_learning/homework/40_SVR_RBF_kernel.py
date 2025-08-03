@@ -13,8 +13,7 @@ coord_y = func(coord_x).ravel()
 # здесь продолжайте программу
 svr = svm.SVR(kernel='rbf')
 
-x_train = coord_x[::3]
-y_train = coord_y[::3]
+x_train, y_train = coord_x[::3], coord_y[::3]
 
 svr.fit(x_train, y_train)
 
