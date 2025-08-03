@@ -33,12 +33,12 @@ for _ in range(N):
     grad = df(w, x_train[k], y_train[k])
     w -= nt * grad
     
-predictions = np.sign(w @ x_train.T)
+predict = np.sign(w @ x_train.T)
 
-TP = np.sum((predictions == 1) & (y_train == 1))
-TN = np.sum((predictions == -1) & (y_train == -1))
-FP = np.sum((predictions == 1) & (y_train == -1))
-FN = np.sum((predictions == -1) & (y_train == 1))
+TP = np.sum((predict == 1) & (y_train == 1))
+TN = np.sum((predict == -1) & (y_train == -1))
+FP = np.sum((predict == 1) & (y_train == -1))
+FN = np.sum((predict == -1) & (y_train == 1))
 
 precision = TP / (TP + FP) 
 recall = TP / (TP + FN) 
