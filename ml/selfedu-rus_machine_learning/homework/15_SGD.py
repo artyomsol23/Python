@@ -11,6 +11,7 @@ def a(x, w):
 
 def gradient(x, y, w):
     x_vec = np.array([1, x, x ** 2, np.cos(2 * x), np.sin(2 * x)])
+    
     return 2 * (a(x, w) - y) * x_vec
 
 def loss(x, y, w):
@@ -45,6 +46,7 @@ total_loss = 0.0
 for i in range(sz):
     xi = coord_x[i]
     yi = coord_y[i]
+    
     total_loss += loss(xi, yi, w)
 
 Q = total_loss / sz
