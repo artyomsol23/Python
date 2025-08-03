@@ -14,10 +14,11 @@ clf.fit(data_x, data_y)
 
 w12 = clf.coef_[0]  # w1 w2
 w0 = clf.intercept_[0]
+
 w = np.hstack([w0, *w12])
 
 v_support = clf.support_vectors_
 
-predictions = np.sign(w0 + np.dot(data_x, w12))
+predict = np.sign(w0 + np.dot(data_x, w12))
 
-Q = np.sum(predictions != data_y)
+Q = np.sum(predict != data_y)
