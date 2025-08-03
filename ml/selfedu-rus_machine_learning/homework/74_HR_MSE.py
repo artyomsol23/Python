@@ -16,7 +16,6 @@ b, b1, b2 = np.mean(y), np.mean(y1), np.mean(y2)
 HR = np.sum((b - y) ** 2)
 HR1 = np.sum((b1 - y1) ** 2)
 HR2 = np.sum((b2 - y2) ** 2)
-
 N0, N1, N2 = len(y), len(y1), len(y2)
 
 IG = HR - (((N1 / N0) * HR1) + ((N2 / N0) * HR2))
