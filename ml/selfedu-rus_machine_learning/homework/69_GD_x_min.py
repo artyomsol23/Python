@@ -17,4 +17,4 @@ x = -4
 n = 200
 
 for _ in range(n):
-    x = x - eta * df(x)
+    x -= eta * df(x)
