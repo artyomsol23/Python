@@ -16,7 +16,7 @@ coord_y = func(coord_x) # значения функции по оси ордин
 sz = len(coord_x) # общее число отсчетов
 
 # здесь продолжайте программу
-w = [-1.59, -0.69, 0.278, 0.497, -0.106]
+w = np.array([-1.59, -0.69, 0.278, 0.497, -0.106])
 
 predict = model(coord_x, w)
 loss = np.abs(predicted - coord_y)
