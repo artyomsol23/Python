@@ -11,6 +11,7 @@ loss = lambda ax, y: (ax - y) ** 2 # квадратическая функция
 y = model_a(x, w) + np.random.normal(0, 0.1, len(x)) # целевые значения
 
 # здесь продолжайте программу
-predictions = model_a(x, w)
-losses = loss(predictions, y)
+predict = model_a(x, w)
+losses = loss(predict, y)
+
 Q = np.mean(losses)
