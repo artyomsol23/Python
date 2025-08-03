@@ -15,6 +15,6 @@ lin_clf.fit(x_train, y_train)
 w = lin_clf.coef_[0].copy()
 w[0] *= w[2]
 
-predictions = np.sign(w @ x_train.T)
+predict = np.sign(w @ x_train.T)
 
-Q = np.sum(y_train != predictions)
+Q = np.sum(y_train != predict)
