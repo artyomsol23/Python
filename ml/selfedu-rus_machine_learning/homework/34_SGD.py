@@ -15,6 +15,7 @@ def loss(x, y, w):  # MSE
 def gradient(x, y, w):  # градиент
     x_vec = np.array([1, x, x ** 2, x ** 3, x ** 4])
     error = model(x, w) - func(x)
+    
     return 2 * error * x_vec
 
 coord_x = np.arange(-5.0, 5.0, 0.1) # значения по оси абсцисс [-5; 5] с шагом 0.1
@@ -35,11 +36,11 @@ for _ in range(N):
     xk, yk = coord_x[k], coord_y[k]
     
     grad = gradient(xk, yk, w)
-    w = w - eta * grad
+    w -= eta * grad
     
     Lk = loss(xk, yk, w)
     Qe = lm * Lk + (1 - lm) * Qe
 
-predictions = model(coord_x, w)
-losses = (predictions - coord_y) ** 2  # MSE
-Q = np.mean(losses)
+predict = model(coord_x, w)
+
+Q = np.mean((predict - coord_y) ** 2)  # MSE
