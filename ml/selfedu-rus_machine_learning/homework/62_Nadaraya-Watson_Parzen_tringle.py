@@ -8,7 +8,6 @@ x_est = np.arange(0, 3.1, 0.1) # множество точек для проме
 
 # здесь продолжайте программу
 h = 1.0
-
 K = lambda r: np.abs(1 - r) * bool(r <= 1)  # треугольное окно Парзена
 ro = lambda xx, xi: np.abs(xx - xi)         # модуль разностей
 w = lambda xx, xi: K(ro(xx, xi) / h)
