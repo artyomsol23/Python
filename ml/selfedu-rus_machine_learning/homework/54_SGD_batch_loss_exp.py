@@ -4,12 +4,14 @@ import numpy as np
 # экспоненциальная функция потерь
 def loss(w, x, y):
     M = np.dot(w, x) * y
+    
     return np.exp(-M)
 
 
 # производная экспоненциальной функции потерь по вектору w
 def df(w, x, y):
     M = np.dot(w, x) * y
+    
     return -np.exp(-M) * x.T * y
 
 
@@ -36,8 +38,8 @@ for _ in range(N):
     gradient = np.zeros_like(w)
     
     for i in range(k, k + batch_size):
-        xi = x_train[i]
-        yi = y_train[i]
+        xi, yi = x_train[i], y_train[i]
+        
         Li = loss(w, xi, yi)
         Qk += Li
         gradient += df(w, xi, yi)
