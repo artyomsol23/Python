@@ -42,9 +42,7 @@ Py2, L2 = 1 - Py1, 1  # и величины штрафов неверной кл
 # здесь продолжайте программу
 b = lambda x, v, m, l, py: np.log(l * py) - 0.5 * (x - m) @ np.linalg.inv(v) @ (x - m).T - 0.5 * np.log(
     np.linalg.det(v))
-
 x = np.array([0, -4])
-
 a = np.argmax([b(x, VV1, mm1, L1, Py1), b(x, VV2, mm2, L2, Py2)])
 
 predict = []
