@@ -12,7 +12,6 @@ y = func(x) + np.random.normal(0, 0.2, len(x)) # значения функции
 
 # здесь продолжайте программу
 h = 1.0
-
 K = lambda r: np.exp(-2 * r * r)     # гауссовское парзеновское окно
 ro = lambda xx, xi: np.abs(xx - xi)  # модуль разностей
 w = lambda xx, xi: K(ro(xx, xi) / h)
@@ -21,6 +20,7 @@ y_est = []
 
 for xx in x:
     ww = np.array([w(xx, xi) for xi in x])
+    
     yy = np.dot(ww, y) / sum(ww)
     y_est.append(yy)
     
