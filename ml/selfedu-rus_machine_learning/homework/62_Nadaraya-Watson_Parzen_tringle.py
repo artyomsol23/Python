@@ -14,7 +14,9 @@ ro = lambda xx, xi: np.abs(xx - xi)         # модуль разностей
 w = lambda xx, xi: K(ro(xx, xi) / h)
 
 y_est = []
+
 for xx in x_est:
     ww = np.array([w(xx, xi) for xi in x])
+    
     yy = np.dot(ww, y) / sum(ww)
     y_est.append(yy)
