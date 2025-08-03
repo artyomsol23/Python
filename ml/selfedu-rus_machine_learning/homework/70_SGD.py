@@ -11,6 +11,7 @@ def a(x, w):
 
 def gradient(x, y, w):
     x_vec = np.array([1, x, x ** 2, np.cos(2 * x), np.sin(2 * x)])
+    
     return 2 * (a(x, w) - y) * x_vec
 
 def loss(x, y, w):
@@ -24,26 +25,24 @@ eta = np.array([0.01, 0.001, 0.0001, 0.01, 0.01]) # шаг обучения дл
 w = np.array([0., 0., 0., 0., 0.]) # начальные значения параметров модели
 N = 500 # число итераций алгоритма SGD
 lm = 0.02 # значение параметра лямбда для вычисления скользящего экспоненциального среднего
-
 Qe = 0.0 # начальное значение среднего эмпирического риска
 np.random.seed(0) # генерация одинаковых последовательностей псевдослучайных чисел
 
 for _ in range(N):
     k = np.random.randint(0, sz)
-    x_k = coord_x[k]
-    y_k = coord_y[k]
+    xk, yk = coord_x[k], coord_y[k]
     
     grad = gradient(x_k, y_k, w)
-    w = w - eta * grad
+    w -= eta * grad
     
     L_k = loss(x_k, y_k, w)
     Qe = lm * L_k + (1 - lm) * Qe
 
-total_loss = 0.0
+total = 0.0
 
 for i in range(sz):
-    x_i = coord_x[i]
-    y_i = coord_y[i]
-    total_loss += loss(x_i, y_i, w)
+    xi, yi = coord_x[i], coord_y[i]
 
-Q = total_loss / sz
+    total += loss(x_i, y_i, w)
+
+Q = np.mean(total)
