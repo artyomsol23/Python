@@ -14,11 +14,13 @@ def predict(X, w):  # для вычисления предсказания мо�
 
 def compute_Qk(X_batch, y_batch, w):  # для вычисления усеченного эмпирического риска
     residuals = predict(X_batch, w) - y_batch
+    
     return np.mean(residuals ** 2)
 
 def compute_gradient(X_batch, y_batch, w):  # для вычисления градиента
     residuals = predict(X_batch, w) - y_batch
     gradient = 2 * np.mean(residuals.reshape(-1, 1) * X_batch, axis=0)
+    
     return gradient
 
 
