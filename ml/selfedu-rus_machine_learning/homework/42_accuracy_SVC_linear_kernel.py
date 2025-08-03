@@ -31,10 +31,11 @@ clf.fit(x_train, y_train)
 
 w12 = clf.coef_[0]  # w1 w2
 w0 = clf.intercept_[0]
+
 w = np.hstack([w0, *w12])
 
 v_support = clf.support_vectors_
 
-predictions = np.sign(w0 + np.dot(x_test, w12))
+predict = np.sign(w0 + np.dot(x_test, w12))
 
-acc = np.mean(predictions == y_test)
+acc = np.mean(predict == y_test)
