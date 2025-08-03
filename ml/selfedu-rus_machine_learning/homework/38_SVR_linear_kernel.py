@@ -22,10 +22,11 @@ svr.fit(x_train, y_train)
 
 w_coef = svr.coef_[0]  # w1 w2
 w0 = svr.intercept_[0]
+
 w = np.concatenate(([w0], w_coef))
 
 n = len(coord_x)
 
-predictions = model(w, coord_x)
+predict = model(w, coord_x)
 
-Q = np.mean((predictions - y_train) ** 2)
+Q = np.mean((predict - y_train) ** 2)
