@@ -22,6 +22,6 @@ Y_train = y[::2]  # обучающая выборка (целевые значе
 w = np.linalg.inv(X_train.T @ X_train + IL) @ X_train.T @ Y_train
 w = w.tolist()
 
-predictions = X @ w
+predict = X @ w
 
-Q = np.mean((predictions - y) ** 2)
+Q = np.mean((predict - y) ** 2)
