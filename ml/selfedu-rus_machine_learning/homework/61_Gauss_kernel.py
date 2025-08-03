@@ -40,7 +40,6 @@ def gauss_kernel(r):
     return 1 / np.sqrt(2 * np.pi) * np.exp(-0.5 * r ** 2)
 
 distances = np.array([manhattan_distance(x, x_train) for x in x_test])
-
 h = 1
 
 w = gauss_kernel(distances / h)
@@ -49,6 +48,7 @@ class_sum = np.zeros((len(x_test), 3))
 
 for y in [0, 1, 2]:
     class_w = w[:, y_train == y]
+    
     class_sum[:, y] = np.sum(class_w, axis=1)
     
 predict = np.argmax(class_sum, axis=1)
