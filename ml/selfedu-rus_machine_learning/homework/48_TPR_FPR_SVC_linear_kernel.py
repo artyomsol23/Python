@@ -32,6 +32,7 @@ clf.fit(x_train, y_train)
 
 w1, w2 = clf.coef_[0]
 w0 = clf.intercept_[0]
+
 w = (w0, w1, w2)
 
 # ROC-AUC
