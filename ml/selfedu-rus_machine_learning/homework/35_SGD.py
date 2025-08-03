@@ -4,12 +4,14 @@ import numpy as np
 # сигмоидная функция потерь
 def loss(w, x, y):
     M = np.dot(w, x) * y
+    
     return 2 / (1 + np.exp(M))
 
 
 # производная сигмоидной функции потерь по вектору w
 def df(w, x, y):
     M = np.dot(w, x) * y
+    
     return -2 * np.exp(M) * x.T * y / (1 + np.exp(M)) ** 2
 
 
@@ -36,8 +38,7 @@ for _ in range(N):
     gradient = np.zeros_like(w)
     
     for i in range(k, k + batch_size):
-        xi = x_train[i]
-        yi = y_train[i]
+        xi, yi = x_train[i], y_train[i]
         
         Qk += loss(w, xi, yi)
         gradient += df(w, xi, yi)
@@ -45,8 +46,9 @@ for _ in range(N):
     Qk /= batch_size
     gradient /= batch_size
     
-    w = w - nt * gradient
+    w -= nt * gradient
     Qe = lm * Qk + (1 - lm) * Qe
 
 M = (x_train @ w) * y_train
+
 Q = np.sum(M < 0)
