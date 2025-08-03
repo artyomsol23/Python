@@ -8,6 +8,7 @@ def func(x):
 # модель
 def model(w, x):
     xv = np.array([x ** n for n in range(len(w))])
+    
     return w.T @ xv
 
 
@@ -19,6 +20,7 @@ def loss(w, x, y):
 # производная функции потерь
 def dL(w, x, y):
     xv = np.array([x ** n for n in range(len(w))])
+    
     return 2 * (model(w, x) - y) * xv
 
 
@@ -56,6 +58,7 @@ for _ in range(n_iter):
     
     w_tilde = np.copy(w)
     w_tilde[0] = 0
+    
     w = w - eta * (grad + lm_l1 * np.sign(w_tilde))
     
 Q = np.mean([loss(w, x, y) for x, y in zip(coord_x, coord_y)])
