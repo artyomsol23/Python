@@ -18,7 +18,6 @@ k = 5
 distances = minkowski_distance(x_test[:, np.newaxis, :], x_train[np.newaxis, :, :], p=1)
 
 nearest_i = np.argpartition(distances, k, axis=1)[:, :k]
-
 nearest_n = y_train[nearest_i]
 
 predict = np.sign(np.sum(nearest_n, axis=1))
