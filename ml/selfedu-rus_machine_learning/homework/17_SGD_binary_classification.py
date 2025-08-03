@@ -4,12 +4,14 @@ import numpy as np
 # логарифмическая функция потерь
 def loss(w, x, y):
     M = np.dot(w, x) * y
+    
     return np.log2(1 + np.exp(-M))
 
 
 # производная логарифмической функции потерь по вектору w
 def df(w, x, y):
     M = np.dot(w, x) * y
+    
     return -(np.exp(-M) * x.T * y) / ((1 + np.exp(-M)) * np.log(2))
 
 
@@ -31,8 +33,7 @@ np.random.seed(0) # генерация одинаковых последоват
 # здесь продолжайте программу
 for _ in range(N):
     k = np.random.randint(0, n_train)
-    x_k = x_train[k]
-    y_k = y_train[k]
+    x_k, y_k = x_train[k], y_train[k]
     
     w -= nt * df(w, x_k, y_k)
     Qe = lm * loss(w, x_k, y_k) + (1 - lm) * Qe
