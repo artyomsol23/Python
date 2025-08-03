@@ -5,12 +5,14 @@ from sklearn.model_selection import train_test_split
 def loss(w, x, y):
     # здесь реализация экспоненциальной функции потерь
     M = np.dot(w, x) * y
+    
     return np.exp(-M)
 
 
 def df(w, x, y):
     # здесь реализация производной функции потерь по вектору w
     M = np.dot(w, x) * y
+    
     return -np.exp(-M) * x * y
 
 
