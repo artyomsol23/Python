@@ -34,9 +34,11 @@ x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, random_state
 
 # здесь продолжайте программу
 def euclidean_distance_matrix(X, Y):
-    X_sq = np.sum(X**2, axis=1, keepdims=True)
-    Y_sq = np.sum(Y**2, axis=1)
+    X_sq = np.sum(X ** 2, axis=1, keepdims=True)
+    Y_sq = np.sum(Y ** 2, axis=1)
+    
     XY = np.dot(X, Y.T)
+    
     return np.sqrt(X_sq + Y_sq - 2*XY)
 
 k = 5
@@ -44,7 +46,6 @@ k = 5
 distances = euclidean_distance_matrix(x_test, x_train)
 
 nearest_i = np.argpartition(distances, k, axis=1)[:, :k]
-
 nearest_l = y_train[nearest_i]
 
 predict = np.array([np.bincount(row).argmax() for row in nearest_l])
