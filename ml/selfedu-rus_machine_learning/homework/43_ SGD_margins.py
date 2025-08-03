@@ -45,18 +45,18 @@ batch_size = 10 # размер мини-батча (величина K = 10)
 
 # здесь продолжайте программу
 for _ in range(N):
-    k = np.random.randint(0, n_train-batch_size)  # n_train - размер выборки (массива x_train)
+    k = np.random.randint(0, n_train - batch_size)  # n_train - размер выборки (массива x_train)
     grad = np.zeros_like(w)
     
     for i in range(k, k + batch_size):
         grad += df(w, x_train[i], y_train[i])
     
     grad /= batch_size
-    w = w - nt * grad
+    w -= nt * grad
     
 mrgs = np.array([np.dot(w, x) * y for x, y in zip(x_test, y_test)])
 mrgs = np.sort(mrgs)
 
-predictions = np.array([1 if np.dot(w, x) >= 0 else -1 for x in x_test])
+predict = np.array([1 if np.dot(w, x) >= 0 else -1 for x in x_test])
 
-acc = np.mean(predictions == y_test)
+acc = np.mean(predicti == y_test)
