@@ -6,13 +6,13 @@ def func(x):
 
 
 # здесь объявляйте необходимые функции
-def model(x, w):  # модель
+def model(x, w):
     return w[0] + w[1] * x + w[2] * x ** 2 + w[3] * x ** 3 + w[4] * x ** 4
 
-def loss(x, y, w):  # MSE
+def loss(x, y, w):
     return (model(x, w) - y) ** 2
 
-def gradient(x, y, w):  # градиент
+def gradient(x, y, w):
     x_vec = np.array([1, x, x ** 2, x ** 3, x ** 4])
     error = model(x, w) - func(x)
     
@@ -43,4 +43,4 @@ for _ in range(N):
 
 predict = model(coord_x, w)
 
-Q = np.mean((predict - coord_y) ** 2)  # MSE
+Q = np.mean((predict - coord_y) ** 2)
