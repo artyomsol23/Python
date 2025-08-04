@@ -18,5 +18,5 @@ epsilon = 0.01
 
 for _ in range(N):
     grad = df(x)
-    G = alpha * G + (1 - alpha) * grad ** 2
+    G = alpha * G + (1 - alpha) * grad * grad
     x -= eta * grad / (np.sqrt(G) + epsilon)
