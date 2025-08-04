@@ -36,7 +36,7 @@ for _ in range(N):
     Xk = X[k:k + batch_size]
     yk = coord_y[k:k + batch_size]
 
-    # !!! сначала Qe -> потом пересчет w
+    # Qe -> Qk -> v -> w
     Qk = np.mean((Xk.dot(w) - yk) ** 2)
     Qe = lm * Qk + (1 - lm) * Qe
     
