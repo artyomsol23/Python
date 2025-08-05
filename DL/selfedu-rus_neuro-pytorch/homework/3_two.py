@@ -12,7 +12,8 @@ h = W1 @ x.T + b1.T  # выход первого слоя
 W2 = np.array([[-1.5, 0.5]])  # второй слой
 b2 = np.array([[-1]])  # смещение второго слоя
 
-u = np.array([[+1 if z > 0 else -1 for z in h]])  # np.where(z > 0, 1, -1)  # сигма
+u = np.array([[+1 if z > 0 else -1 for z in h]])  # сигма
+# u = np.where(z > 0, 1, -1)
 y = W2 @ u.T + b2.T  # результат
 
 print(f"{y.item():.1f}") # вывод выходного значения y с точностью до десятых
