@@ -11,7 +11,7 @@ bias1 = torch.tensor([18, 12], dtype=torch.float32)
 W2 = torch.tensor([1, 1], dtype=torch.float32)
 bias2 = torch.tensor([-1], dtype=torch.float32)
 
-h = torch.matmul(X, W1.transpose(1, 0)) + bias1  # h = torch.matmul(X, W1.T + bias1
+h = torch.matmul(X, W1.transpose(1, 0)) + bias1  # h = torch.matmul(X, W1.T) + bias1
 h = torch.sign(h)
 
 predict = torch.sign(h @ W2 + bias2)
