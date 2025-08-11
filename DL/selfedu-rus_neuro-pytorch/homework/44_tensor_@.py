@@ -1,5 +1,6 @@
 import torch
 
+
 w = list(map(float, input().split()))
 x = list(map(float, input().split()))
 
