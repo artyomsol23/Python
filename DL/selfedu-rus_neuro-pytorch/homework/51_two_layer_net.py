@@ -29,7 +29,7 @@ bias1 = torch.tensor([0, 0], dtype=torch.float32)
 W2 = torch.tensor([3, -2], dtype=torch.float32)
 bias2 = torch.tensor([7.8], dtype=torch.float32)
 
-h = torch.matmul(X, W1.transpose(1, 0) + bias1)  # h = torch.matmul(X, W1.T + bias1)
+h = torch.matmul(X, W1.transpose(1, 0) + bias1)  # h = torch.matmul(X, W1.T) + bias1)
 h = act_sigma(h)
 
 predict = h @ W2 + bias2
