@@ -1,5 +1,6 @@
 import torch
 
+
 # исходная функция, которую нужно аппроксимировать моделью a(x)
 def func(x):
     return 0.1 * x ** 2 - torch.sin(x) + 5.
