@@ -1,5 +1,6 @@
 import torch
 
+
 # значения x, func, predict не менять
 x = torch.arange(-3, 3, 0.1)
 func = x ** 2 - 2 * torch.cos(x) - 5
