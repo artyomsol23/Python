@@ -1,5 +1,6 @@
 import numpy as np
 
+
 x = list(map(int, input().split())) # чтение вектора [x1, x2] из входного потока
 
 # здесь продолжайте программу
