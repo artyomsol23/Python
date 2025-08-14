@@ -1,5 +1,6 @@
 import torch
 
+
 lst = list(map(int, input().split()))
 
 targets = torch.tensor(lst, dtype=torch.int64)
