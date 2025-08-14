@@ -1,5 +1,6 @@
 import torch
 
+
 # тензор X в программе не менять
 batch_size = 32 # количество входных данных
 X = torch.tensor(list(map(float, input().split())), dtype=torch.float32).view(batch_size, 2)
