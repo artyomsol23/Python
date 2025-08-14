@@ -1,5 +1,6 @@
 import torch
 
+
 lst = list(map(float, input().split())) # список в программе не менять
 
 
