@@ -1,5 +1,6 @@
 import torch
 
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 t1 = torch.arange(1, 6, dtype=torch.int32)
