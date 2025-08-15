@@ -25,9 +25,9 @@ for _ in range(N):
     k = np.random.randint(0, total)
     y = x_train[k] @ w
     loss_k = loss(y, y_train[k])
-    
+
+    optim.zero_grad()
     loss_k.backward()
     optim.step()
-    optim.zero_grad()
     
 Q = torch.mean(((x_train @ w) - y_train) ** 2).item()
