@@ -43,10 +43,10 @@ for _ in range(N):
     k = np.random.randint(0, total)
     predict = model(x_train[k], W1, W2, bias1, bias2)
     y = loss_func(predict, y_train[k].unsqueeze(0))  # добавить доп. ось
-    
+
+    optim.zero_grad()
     y.backward()
     optim.step()
-    optim.zero_grad()
 
 Q = 0
 
