@@ -32,5 +32,5 @@ for _ in range(N):
     optim.zero_grad()
 
 # чтобы преобразовать +1/0 в +1/-1 для соответствия знаковой ф-ии используется y_train * 2 - 1
-Q = torch.mean((torch.sign(X @ w) == (y_train * 2 - 1)).float())
+Q = torch.mean((torch.sign(X @ w) == (y_train * 2 - 1)).float().item())
                
