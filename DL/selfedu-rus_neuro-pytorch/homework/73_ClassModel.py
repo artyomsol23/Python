@@ -55,8 +55,9 @@ model.eval()
 # прогоните через модель обучающую выборку и подсчитайте долю верных классификаций
 Q = 0
 
-for x, y in zip(x_train, y_train):
-    Q += (torch.sign(model(x)) == (y * 2 - 1)).float().item()
+with torch.no_grad():
+    for x, y in zip(x_train, y_train):
+        Q += (torch.sign(model(x)) == (y * 2 - 1)).float().item()
 
 # результат (долю верных классификаций) сохраните в переменной Q (в виде вещественного числа, а не тензора)
 Q /= total
