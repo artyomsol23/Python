@@ -10,8 +10,8 @@ class FuncDataset(data.Dataset):
         self.func = 2 * torch.exp(-self.coord_x / 2) + 0.2 * torch.sin(self.coord_x / 10) - 5
         self.length = len(self.coord_x)
         
-    def __getitem__(self, idx):
-        return self.coord_x[idx], self.func[idx]
+    def __getitem__(self, indx):
+        return self.coord_x[indx], self.func[indx]
     
     def __len__(self):
         return self.length
