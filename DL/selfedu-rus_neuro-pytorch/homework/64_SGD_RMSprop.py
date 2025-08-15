@@ -15,8 +15,8 @@ optim = optim.RMSprop(params=[x], lr=lr)
 
 for _ in range(N):
     y = func(x)
-    y.backward()
-                  
-    optim.step()
+    
     optim.zero_grad()
-  
+    y.backward()          
+    optim.step()
+    
