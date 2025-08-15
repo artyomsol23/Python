@@ -42,12 +42,11 @@ for _ in range(N):
     # выбор индексов образов в размере batch_size
     idx = np.random.choice(total, batch_size, False)
     # с помощью списочной индексации отберите из выборки x_train образы согласно индексам списка idx
-    x = x_train[idx]
-    y = y_train[idx]
+    x, y = x_train[idx], y_train[idx]
     # пропустите через модель батч образов выборки и вычислите батч прогнозов predict
     predict = model(x)
     # вычислите значение функции потерь и сохраните результат в переменной loss
-    loss = loss_func(predict, y.unsqueeze(1))  #
+    loss = loss_func(predict, y.unsqueeze(1))  # преобразуем тензор формы (batch_size,) в (batch_size, 1) - добавляем размерность в конец
     
     # выполните один шаг градиентного спуска так, как это было сделано в предыдущем подвиге
     optimizer.zero_grad()
