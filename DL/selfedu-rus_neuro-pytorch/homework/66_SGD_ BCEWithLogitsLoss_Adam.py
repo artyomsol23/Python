@@ -27,9 +27,10 @@ for _ in range(N):
     k = np.random.randint(0, total)
     predict = X[k] @ w
     y = loss_func(predict, y_train[k])
+    
+    optim.zero_grad()
     y.backward()
     optim.step()
-    optim.zero_grad()
 
 # чтобы преобразовать +1/0 в +1/-1 для соответствия знаковой ф-ии используется y_train * 2 - 1
 Q = torch.mean((torch.sign(X @ w) == (y_train * 2 - 1)).float().item())
