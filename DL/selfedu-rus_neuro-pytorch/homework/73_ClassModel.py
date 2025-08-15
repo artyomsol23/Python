@@ -42,7 +42,7 @@ for _ in range(N):
     # пропустите через модель k-й образ выборки x_train и вычислите прогноз predict
     predict = model(x_train[k])
     # вычислите значение функции потерь и сохраните результат в переменной loss
-    loss = loss_func(predict, y_train[k].unsqueeze(0))
+    loss = loss_func(predict, y_train[k].unsqueeze(0))  # преобразуем скаляр в тензор формы (1,) - добавляем размерность в начало
     
     # выполните один шаг градиентного спуска так, как это было сделано в предыдущем подвиге
     optimizer.zero_grad()
