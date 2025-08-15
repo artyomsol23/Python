@@ -12,8 +12,7 @@ x = torch.tensor([x0], requires_grad=True)
 
 for _ in range(N):
     y = func(x)
-    y.backward()
     
-    x.data -= lr * x.grad
     x.grad.zero_()
-  
+    y.backward()
+    x.data -= lr * x.grad
