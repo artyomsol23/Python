@@ -58,7 +58,7 @@ model.train
 optim = optim.RMSprop(params=model.parameters(), lr=0.01)
 loss_func = torch.nn.MSELoss()
 
-for e in range(epochs):
+for _ in range(epochs):
     for x, y in train_data:
         predict = model(x)
         loss = loss_func(predict, y.unsqueeze(-1))
