@@ -1,8 +1,0 @@
-import torch
-
-
-t_out = torch.randn(10, dtype=torch.float32) * 10 - 5 # тензор t_out в программе не менять
-
-t_pred = torch.tensor([torch.exp(x) / torch.sum(torch.exp(t_out)) for x in t_out])  # softmax
-
-t_indx_min = torch.argmin(t_pred).item()

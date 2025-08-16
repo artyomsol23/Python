@@ -1,4 +1,0 @@
-import torch
-
-
-table = torch.tensor([[1, 4], [2, 5], [3, 6]], dtype=torch.int32)

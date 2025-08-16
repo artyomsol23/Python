@@ -1,8 +1,0 @@
-import torch
-
-
-lst = list(map(int, input().split())) # список lst в программе не менять
-
-tr = torch.tensor(lst, dtype=torch.int32)
-
-t_res = tr[(tr >= -2) & (tr <= 2)]
