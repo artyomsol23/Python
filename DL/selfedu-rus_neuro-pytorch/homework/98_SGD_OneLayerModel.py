@@ -53,6 +53,9 @@ for _ in range(epochs):
     loss_mean = 0 # вспомогательные переменные для вычисления среднего значения потерь при обучении
     lm_count = 0
 
+
+    model.train()
+    
     # обучение нейронной сети с вычисление средних потерь loss_mean
     for x, y in train_data:
         predict = model(x)
@@ -65,9 +68,9 @@ for _ in range(epochs):
         lm_count += 1
         loss_mean = 1 / lm_count * loss.item() + (1 - 1 / lm_count) * loss_mean
 
-    # валидация нейронной сети с вычислением средних потерь Q_val
     model.eval()
     
+    # валидация нейронной сети с вычислением средних потерь Q_val    
     Q_val = 0
     count_val = 0
     
