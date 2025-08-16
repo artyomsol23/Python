@@ -47,8 +47,6 @@ class FuncModel(nn.Module):
 
 # здесь продолжайте программу
 batch_size = 16
-epochs = 20
-
 d_train = FuncDataset()
 train_data = data.DataLoader(d_train, batch_size, shuffle=True)
 
@@ -57,6 +55,8 @@ model.train
 
 optim = optim.RMSprop(params=model.parameters(), lr=0.01)
 loss_func = torch.nn.MSELoss()
+
+epochs = 20
 
 for _ in range(epochs):
     for x, y in train_data:
