@@ -46,7 +46,7 @@ class FuncModel(nn.Module):
 
 
 # здесь продолжайте программу
-batch_size = 16
+batch = 16
 d_train = FuncDataset()
 train_data = data.DataLoader(d_train, batch_size, shuffle=True)
 
