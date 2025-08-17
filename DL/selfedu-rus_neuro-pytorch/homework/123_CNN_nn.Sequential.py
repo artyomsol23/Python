@@ -10,10 +10,10 @@ ds = data.TensorDataset(_global_var_data_x, _global_var_target)
 model = nn.Sequential(
     nn.Conv2d(1, 32, (3, 3), bias=True, padding=1),
     nn.ReLU(inplace=True),
-    nn.MaxPool2d(2, 2),
+    nn.MaxPool2d((2, 2)),
     nn.Conv2d(32, 16, 3, bias=True, padding=1),
     nn.ReLU(inplace=True),
-    nn.MaxPool2d(2, 2),
+    nn.MaxPool2d((2, 2)),
     nn.Flatten(),
     nn.Linear(64, 10, bias=True)
 )
