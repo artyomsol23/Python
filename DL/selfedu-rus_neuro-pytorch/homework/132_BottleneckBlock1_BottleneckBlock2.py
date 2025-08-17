@@ -53,7 +53,7 @@ model = nn.Sequential(
     nn.MaxPool2d((3, 3), padding=1, stride=2),
     BottleneckBlock1(),
     BottleneckBlock2(),
-    nn.AdaptiveAvgPool2d(1),
+    nn.AdaptiveAvgPool2d((1, 1)),
     nn.Flatten(),
     nn.Linear(256, 10)
 )
