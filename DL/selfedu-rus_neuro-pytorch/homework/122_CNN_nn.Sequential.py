@@ -7,10 +7,10 @@ x = torch.rand(1, 16, 16) # тензор x в программе не менят
 model = nn.Sequential(
     nn.Conv2d(1, 32, (3, 3), padding=1),
     nn.ReLU(inplace=True),
-    nn.MaxPool2d(2, 2),
+    nn.MaxPool2d((2, 2)),
     nn.Conv2d(32, 16, (3, 3), padding=1, bias=True),
     nn.ReLU(inplace=True),
-    nn.MaxPool2d(2, 2),
+    nn.MaxPool2d((2, 2)),
     nn.Flatten(),
     nn.Linear(256, 5, bias=True)
 )
