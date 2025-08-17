@@ -23,7 +23,7 @@ batch_size = 8
 x = torch.rand(batch_size, 64, 32, 32) # тензор x в программе не менять
 
 # здесь продолжайте программу
-model = BasicBlock()
-model.eval()
+model_bb = BasicBlock()
+model_bb.eval()
 
-y = model(x)
+y = model_bb(x)
