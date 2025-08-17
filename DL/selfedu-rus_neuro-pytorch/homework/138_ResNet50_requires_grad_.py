@@ -1,0 +1,29 @@
+import torch
+import torch.nn as nn
+from torchvision import models
+import torchvision.transforms.functional as TF
+
+
+# тензор x и img_pil в программе не менять
+x = torch.randint(0, 255, (3, 250, 250), dtype=torch.float32)
+img_pil = TF.to_pil_image(x)
+
+# здесь продолжайте программу
+weights = models.ResNet50_Weights.DEFAULT
+transforms = weights.transforms()
+
+model = models.resnet50()
+model.requires_grad_(False)
+
+model.fc = nn.Sequential(
+    nn.Linear(512 * 4, 128),
+    nn.ReLU(inplace=True),
+    nn.Linear(128, 10),
+)
+model.fc.requires_grad_(False)
+
+model.eval()
+
+img = transforms(img_pil)
+
+predict = model(img.unsqueeze(0))
