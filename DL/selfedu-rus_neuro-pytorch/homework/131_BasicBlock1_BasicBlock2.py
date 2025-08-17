@@ -7,14 +7,14 @@ class BasicBlock1(nn.Module):
     def __init__(self):
         super().__init__()
         self.bn1 = nn.Sequential(
-            nn.Conv2d(64, 128, (3, 3), padding=1, stride=2, bias=False),
+            nn.Conv2d(64, 128, (3, 3), stride=2, padding=1, bias=False),
             nn.BatchNorm2d(128),
             nn.ReLU(inplace=True),
-            nn.Conv2d(128, 128, (3, 3), padding=1, stride=1, bias=False),
+            nn.Conv2d(128, 128, (3, 3), stride=1, padding=1, bias=False),
             nn.BatchNorm2d(128)
         )
         self.sc1 = nn.Sequential(
-            nn.Conv2d(64, 128, (1, 1), padding=0, stride=2, bias=False),
+            nn.Conv2d(64, 128, (1, 1), stride=2, padding=0, bias=False),
             nn.BatchNorm2d(128)
         )
 
@@ -26,10 +26,10 @@ class BasicBlock2(nn.Module):
     def __init__(self):
         super().__init__()
         self.bn2 = nn.Sequential(
-            nn.Conv2d(128, 128, (3, 3), padding=1, stride=1, bias=False),
+            nn.Conv2d(128, 128, (3, 3), stride=1, padding=1, bias=False),
             nn.BatchNorm2d(128),
             nn.ReLU(inplace=True),
-            nn.Conv2d(128, 128, (3, 3), padding=1, stride=1, bias=False),
+            nn.Conv2d(128, 128, (3, 3), stride=1, padding=1, bias=False),
             nn.BatchNorm2d(128)
         )
 
@@ -42,7 +42,7 @@ x = torch.rand(batch_size, 3, 32, 32) # тензор x в программе н�
 
 # здесь продолжайте программу
 model = nn.Sequential(
-    nn.Conv2d(3, 64, (7, 7), padding=3, stride=2, bias=False),
+    nn.Conv2d(3, 64, (7, 7), stride=2, padding=3, bias=False),
     nn.BatchNorm2d(64),
     nn.MaxPool2d((3, 3), stride=2, padding=1),
     BasicBlock1(),
