@@ -5,5 +5,6 @@ a, b, n = map(float, input().split()) # переменные a, b, n в прог
 
 t_range = torch.linspace(a, b, int(n))
 t_out = 1 / (1 + torch.exp(-t_range))  # сигмоидная функция, где t-range = x
+# t_out = torch.sigmoid(t_range)
 
 t_pred = torch.argmax(t_out).item()
