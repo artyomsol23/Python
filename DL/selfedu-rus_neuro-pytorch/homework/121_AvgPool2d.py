@@ -9,4 +9,4 @@ x = torch.randint(0, 255, (batch_size, C, H, W), dtype=torch.float32)  # тен�
 
 # здесь продолжайте программу
 lr = nn.AvgPool2d(3, 2)
-t_out = lr(x)
+t_out = lr(x.view(1, C, H, W))
