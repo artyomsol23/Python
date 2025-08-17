@@ -18,7 +18,7 @@ model.requires_grad_(False)
 model.fc = nn.Sequential(
     nn.Linear(512 * 4, 128, bias=True),
     nn.ReLU(inplace=True),
-    nn.Linear(128, 10, bias=True),
+    nn.Linear(128, 10, bias=True)
 )
 model.fc.requires_grad_(False)
 
