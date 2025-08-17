@@ -8,8 +8,6 @@ x = torch.randint(0, 255, (3, 128, 128), dtype=torch.float32)
 img_pil = TF.to_pil_image(x)
 
 # здесь продолжайте программу
-rw = models.ResNet50_Weights.DEFAULT
-
-transforms = rw.transforms()
+transforms = models.ResNet50_Weights.DEFAULT.transforms()
 
 inp_img = transforms(img_pil)
