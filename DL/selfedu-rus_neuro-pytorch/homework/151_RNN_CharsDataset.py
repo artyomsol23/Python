@@ -19,6 +19,7 @@ class CharsDataset(data.Dataset):
 
         for i, t in enumerate(self.lines):
             t = t.lower()
+            
             for item in range(len(t) - self.prev_chars):
                 data.append([self.alpha_to_int[t[x]] for x in range(item, item + self.prev_chars)])
                 targets.append(self.alpha_to_int[t[item + self.prev_chars]])
