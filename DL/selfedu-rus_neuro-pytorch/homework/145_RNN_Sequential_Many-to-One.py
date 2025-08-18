@@ -12,6 +12,7 @@ class GetOutput(nn.Module):
 batch_size = 4
 seq_length = 8
 in_features = 10
+
 x = torch.rand(batch_size, seq_length, in_features)
 
 # здесь продолжайте программу
