@@ -20,7 +20,7 @@ model = nn.Sequential(
     nn.RNN(input_size=in_features, hidden_size=15, batch_first=True),
     GetOutput(),
     nn.ReLU(inplace=True),
-    nn.Linear(15, 5)
+    nn.Linear(15, 5, bias=True)
 )
 
 model.eval()
