@@ -13,7 +13,7 @@ class OneToManyRNN(nn.Module):
             nonlinearity='tanh',
             bias=True, 
             batch_first=True,
-            dropout=0,
+            dropout=0.0,
             bidirectional=True
         )
         self.output = nn.Linear(
