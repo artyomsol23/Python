@@ -13,7 +13,7 @@ class BiRNN(nn.Module):
             nonlinearity='tanh',
             bias=True, 
             batch_first=True,
-            dropout=0,
+            dropout=0.0,
             bidirectional=True
         )
         self.rnn_2 = nn.RNN(
@@ -23,7 +23,7 @@ class BiRNN(nn.Module):
             nonlinearity='tanh',
             bias=True, 
             batch_first=True,
-            dropout=0,
+            dropout=0.0,
             bidirectional=False
         )
         self.output = nn.Linear(
