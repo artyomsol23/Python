@@ -23,7 +23,7 @@ model = nn.Sequential(
             bias=True, 
             batch_first=True,
             dropout=0.0,
-            bidirectional=False,
+            bidirectional=False
     ),
     LSTMToLinear(),
     nn.Linear(
