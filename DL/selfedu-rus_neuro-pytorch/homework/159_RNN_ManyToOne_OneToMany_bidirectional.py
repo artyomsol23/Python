@@ -34,14 +34,12 @@ class BiRNN(nn.Module):
         self.out_length = 25
 
     def forward(self, x):
-        y, h = self.rnn_1(x)
-        y = torch.cat([h[0], h[1]], dim=1)
-        
+        _, h = self.rnn_1(x)
+        y = torch.cat([h[0], h[1]], dim=1)     
         u = torch.zeros(y.size(0), self.out_length, y.size(1))
         u[:, 0, :] = y
         
-        y, h = self.rnn_2(u)
-
+        y, _ = self.rnn_2(u)
         n = y.size(1)
         out = torch.empty(y.size(0), n, self.output.out_features)
 
