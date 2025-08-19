@@ -23,7 +23,7 @@ class OneToManyRNN(nn.Module):
         )
 
     def forward(self, x):
-        y, h = self.rnn_1(x)
+        y, _ = self.rnn_1(x)
         n = y.size(1)
         out = torch.empty(y.size(0), n, self.output.out_features)
 
