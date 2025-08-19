@@ -38,7 +38,7 @@ model = nn.Sequential(
         nonlinearity='tanh',
         bias=True, 
         batch_first=True,
-        dropout=0,
+        dropout=0.0,
         bidirectional=True
     ),
     OutputModule()
