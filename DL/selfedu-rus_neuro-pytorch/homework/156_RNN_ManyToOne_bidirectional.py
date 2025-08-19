@@ -23,7 +23,7 @@ class ManyToOneRNN(nn.Module):
         )
 
     def forward(self, x):
-        x, h = self.rnn(x)
+        y, h = self.rnn(x)
         y = torch.cat([h[0], h[1]], dim=1)
         
         return self.out(y)
