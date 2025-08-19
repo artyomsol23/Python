@@ -3,7 +3,7 @@ import torch.nn as nn
 
 
 # здесь объявляйте класс модели
-class RNNModel(nn.Module):
+class ManyToOneRNN(nn.Module):
     def __init__(self):
         super().__init__()
         self.rnn = nn.RNN(
@@ -35,7 +35,7 @@ d_size = 32
 
 x = torch.rand(batch_size, seq_length, d_size)
 
-model = RNNModel() # создание объекта модели
+model = ManyToOneRNN() # создание объекта модели
 
 # здесь продолжайте программу
 model.eval()
