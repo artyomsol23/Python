@@ -1,0 +1,7 @@
+nn.Linear(
+    in_features=,
+    out_features=,
+    bias=True,
+    device=None,
+    dtype=None
+)
