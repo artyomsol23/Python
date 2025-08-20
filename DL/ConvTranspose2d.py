@@ -1,0 +1,14 @@
+nn.ConvTranspose2d(
+    in_channels=,
+    out_channels=,
+    kernel_size=,
+    stride=1,
+    padding=0,
+    output_padding=0,
+    groups=1,
+    bias=True,
+    dilation=1,
+    padding_mode='zeros',
+    device=None,
+    dtype=None
+)
