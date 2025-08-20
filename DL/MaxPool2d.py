@@ -1,5 +1,5 @@
 nn.MaxPool2d(
-    kernel_size,
+    kernel_size=,
     stride=None,
     padding=0,
     dilation=1,
