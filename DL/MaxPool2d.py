@@ -1,0 +1,8 @@
+nn.MaxPool2d(
+    kernel_size,
+    stride=None,
+    padding=0,
+    dilation=1,
+    return_indices=False,
+    ceil_mode=False
+)
